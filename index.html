@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Atlas | Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="authPage" class="auth-wrapper">
+        <div class="auth-card">
+            <h1>GlobalAtlas</h1>
+            <p>Enter your details to explore the world</p>
+            <form id="authForm">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="mainPage" class="hidden">
+        <nav>
+            <h2 style="color: #6366f1;">Atlas</h2>
+            <div class="controls">
+                <input type="text" id="searchBar" placeholder="Search countries...">
+                <select id="regionFilter">
+                    <option value="all">All Regions</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Americas">Americas</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+                <select id="populationFilter">
+                    <option value="all">All Populations</option>
+                    <option value="small">Less than 1M</option>
+                    <option value="medium">1M - 50M</option>
+                    <option value="large">50M - 250M</option>
+                    <option value="xlarge">250M+</option>
+                </select>
+            </div>
+            <button onclick="location.reload()" class="logout-btn">Logout</button>
+        </nav>
+
+        <main id="countryGrid" class="grid"></main>
+    </section>
+
+    <div id="countryModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button onclick="closeModal()" class="close-btn">&times;</button>
+            <div id="modalDetails"></div>
+        </div>
+    </div><nav>
+    <h2 style="color: #6366f1;">Atlas</h2>
+    <div class="controls">
+        <input type="text" id="searchBar" placeholder="Search countries...">
+        <section id="mainPage" class="hidden">
+    <nav>
+        <h2 style="color: #6366f1;">Atlas</h2>
+        <div class="controls">
+            <input type="text" id="searchBar" placeholder="Search countries...">
+            <select id="regionFilter">
+                <option value="all">All Regions</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">Americas</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+        </div>
+        <button onclick="location.reload()" class="logout-btn">Logout</button>
+    </nav>
+
+    <main id="countryGrid" class="grid"></main>
+</section>
+
+    <script src="script.js"></script>
+</body>
+</html>

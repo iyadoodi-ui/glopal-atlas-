@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --primary: #6366f1;
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: white;
+}
+
+.hidden { display: none !important; }
+
+/* --- Login Page Styling --- */
+.auth-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top right, #1e293b, #000);
+}
+
+.auth-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    box-sizing: border-box;
+}nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: #1e293b;
+    position: sticky; /* Keeps the filter at the top while scrolling */
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    flex-grow: 1;
+    max-width: 600px;
+    margin: 0 40px;
+}
+
+#searchBar {
+    flex: 2; /* Search bar takes more space */
+}
+
+#regionFilter {
+    flex: 1; /* Dropdown takes less space */
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    outline: none;
+}
+
+
+button {
+    width: 200px;
+    padding: 12px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* --- Modal & Blur Effect --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px); /* THIS CREATES THE BLUR */
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+/* --- Grid & Cards --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 5%;
+    background: #1e293b;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 30px 5%;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover { transform: translateY(-5px); }
+.card img { width: 100%; height: 150px; object-fit: cover; }
+.card-content { padding: 15px; }
+
+.close-btn {
+    position: absolute;
+    top: 10px; right: 15px;
+    background: none; border: none;
+    color: white; font-size: 24px; cursor: pointer;
+}/* Add this to style.css */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }.controls {
+    display: flex;
+    gap: 10px;
+    flex-grow: 1;
+    max-width: 600px;
+    margin: 0 20px;
+}
+
+select {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+select option {
+    background: var(--card-bg);
+}.controls {
+    display: flex;
+    gap: 10px;
+    flex-grow: 1;
+    max-width: 600px;
+    margin: 0 20px;
+}
+
+select {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+select option {
+    background: var(--card-bg);
+    color: white;
+}
